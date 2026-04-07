@@ -1,0 +1,54 @@
+{
+  "permissions": {
+    "ask": [
+      "Bash(rm:*)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)"
+    ],
+    "allow": [
+      "Read",
+      "Edit",
+      "Write",
+      "Bash(npm:*)",
+      "Bash(yarn:*)",
+      "Bash(pnpm:*)",
+      "Bash(gradle:*)",
+      "Bash(mvn:*)",
+      "Bash(go:*)",
+      "Bash(python:*)",
+      "Bash(pytest:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(mkdir:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[AI-Toolkit] Command executed at:' $(date)"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[AI-Toolkit] Session ended. Remember to run tests if code was changed.'"
+          }
+        ]
+      }
+    ]
+  }
+}
