@@ -97,20 +97,74 @@
 
 ## 行业参考数据
 
-### 公开数据（需审慎参考）
+### 1. 开发者 AI 工具采用情况
 
 | 指标 | 数据 | 来源 | 局限性 |
 |------|------|------|--------|
-| 开发者 AI 工具采用率 | 73% | GitHub 2024 调研 | 自报告数据，可能偏高 |
-| 编码任务完成速度 | 提升 55% | GitHub Copilot 研究 | 仅限编码环节，不涵盖全流程 |
-| AI 生成代码采纳率 | 26-40% | 多项研究综合 | 指未经修改直接合入的比例 |
-| Google AI 生成代码占比 | 25% | Google 2024 报告 | 大厂特有场景，不具普遍参考性 |
+| 开发者 AI 工具使用/计划使用率 | **84%** | Stack Overflow Developer Survey 2025 | 自报告数据，49,000+ 受访者 |
+| 开发者日常工作中实际使用 AI | **51%** | Stack Overflow 2025 | 与"计划使用"有差距 |
+| 开发者对 AI 工具持正面评价 | **60%**（从 70%+ 下降） | Stack Overflow 2025 | 正面评价连续两年下降 |
+| 对 AI 输出准确性不信任 | **46%**（从 31% 上升） | Stack Overflow 2025 | 信任度大幅下降 |
+| 认为 AI 不擅长复杂任务 | **39.6%** | Stack Overflow 2025 | 与我们的判断一致 |
 
-### 对行业数据的审慎判断
+> 参考链接：[Stack Overflow 2025 Survey - AI](https://survey.stackoverflow.co/2025/ai)
 
-- 以上数据多来自头部公司，与我们的团队规模和技术栈存在差异
-- 数据衡量的是编码环节效率，不等同于整体交付效率
-- 多数数据为 2024 年发布，AI 工具能力仍在快速迭代
+### 2. AI 代码生成占比
+
+| 指标 | 数据 | 来源 | 局限性 |
+|------|------|------|--------|
+| Google 新代码中 AI 生成占比 | **30%+**（2025 年 Q1） | Alphabet Q1 2025 财报电话会 | 大厂特有场景，不具普遍性 |
+| 行业 AI 生成代码占比 | **41%** | 行业综合调研 2025 | 方法论不统一 |
+| 代码提交中包含 AI 辅助 | **42%** | Sonar State of Code 2025 | "包含"不等同于"主要由 AI 生成" |
+| GitHub Copilot 累计用户 | **2,000 万**（2025 年 7 月） | GitHub 官方数据 | 全球数据，含个人开发者 |
+
+> 参考链接：[EliteBrains AI Code Stats 2026](https://www.elitebrains.com/blog/aI-generated-code-statistics-2025) / [Sonar State of Code 2025](https://shiftmag.dev/state-of-code-2025-7978/)
+
+### 3. AI 对开发效率的实际影响
+
+| 指标 | 数据 | 来源 | 局限性 |
+|------|------|------|--------|
+| GitHub 自研报告：任务完成速度 | **提升 55%** | GitHub 官方实验 | 厂商自研数据，实验条件理想化 |
+| 第三方实测：平均效率提升 | **5.4%**（活跃用户 20%） | BlueOptima 2025 | 基于 IDE 活动数据，非全流程 |
+| RCT 研究：有经验开发者 | **实际慢 19%，但自认为快 20%** | 随机对照试验 2025 | 感知与实际的 39% 偏差 |
+| AI 投资平均回报 | **$3.70 / $1 投入** | 行业综合数据 2025 | 头部企业拉高平均值 |
+| 企业实现有意义 AI ROI | **仅约 5%** | 行业调研 2026 | 多数企业未实现规模化 |
+
+> 参考链接：[BlueOptima Copilot Impact](https://www.blueoptima.com/resource/the-impact-of-github-copilot-on-developer-performance) / [GitClear AI Research](https://www.gitclear.com/recent_ai_developer_productivity_code_quality_research) / [arXiv RCT Study](https://arxiv.org/abs/2507.09089)
+
+### 4. DORA 2025：AI 辅助软件开发状态报告
+
+**[DORA 2025](https://dora.dev/dora-report-2025/) 是 Google 支持的软件交付效能研究项目，2025 年首次专门针对 AI 辅助开发发布报告。**
+
+核心发现：
+
+| 发现 | 说明 |
+|------|------|
+| AI 是"放大器"而非"修复器" | AI 会放大组织已有的能力——强团队更强，弱团队问题更突出 |
+| AI 不自动提升交付效能 | 仅有良好工程实践基础的组织才能从 AI 获得显著收益 |
+| 工程文化是前提 | 信任、代码治理、合规等基础不扎实的组织，引入 AI 可能适得其反 |
+| AI 就绪度是关键挑战 | 大多数工程组织未能通过"AI 就绪度"测试 |
+
+> 这份报告对本提案有重要参考价值：它印证了我们的"渐进式"策略——必须先夯实基础（第一阶段），再扩大范围（第二、三阶段）。
+>
+> 参考链接：[DORA 2025 Report](https://dora.dev/dora-report-2025/) / [Google Blog: DORA Report](https://blog.google/innovation-and-ai/technology/developers-tools/dora-report-2025/) / [InfoQ: DORA Analysis](https://www.infoq.com/news/2026/03/ai-dora-report/)
+
+### 5. AI 代码质量相关研究
+
+| 指标 | 数据 | 来源 |
+|------|------|------|
+| AI 生成代码的可维护性 | 低于人工编写代码 | DevOps.com 2025 研究 |
+| AI 生成代码的正确性 | 开发者审查时间增加 | Sonar State of Code 2025 |
+| 初级开发者就业影响 | 22-25 岁就业率下降约 20%（2022-2025） | MIT Technology Review 引用斯坦福研究 |
+
+> 参考链接：[DevOps.com: AI Code Quality](https://devops.com/ai-in-software-development-productivity-at-the-cost-of-code-quality-2/) / [MIT Technology Review](https://www.technologyreview.com/2025/12/15/1128352/rise-of-ai-coding-developers-2026/)
+
+### 对以上数据的综合判断
+
+1. **采用率数据可靠，但效率数据存在显著分歧**。GitHub 自研报告（55%）与第三方实测（5.4%）差距巨大，RCT 研究甚至发现效率可能为负
+2. **DORA 2025 的核心结论最值得重视**：AI 放大现有能力而非自动改善，组织必须先有良好基础
+3. **开发者信任度在下降**（46% 不信任 AI 准确性），意味着推行过程中需要重视质量保障和团队信心建设
+4. **代码质量风险真实存在**，AI 生成代码可能加速开发但降低可维护性，审查机制不可或缺
 
 ---
 
@@ -533,12 +587,48 @@
 
 ### 附录 A：参考数据来源
 
-- GitHub State of AI in Software Development, 2024
-- Google AI Blog, 2024
-- McKinsey: The economic potential of generative AI, 2023
-- BCG: The ROI of GenAI in Software Development, 2024
+#### 核心报告
 
-> 以上数据来源于公开报告，与我们的实际场景可能存在差异，仅供参考。
+| 报告 | 机构 | 链接 | 关键数据 |
+|------|------|------|---------|
+| State of AI-Assisted Software Development 2025 | DORA (Google) | [dora.dev](https://dora.dev/dora-report-2025/) | AI 是放大器，需良好工程基础 |
+| Developer Survey 2025 - AI | Stack Overflow | [survey.stackoverflow.co](https://survey.stackoverflow.co/2025/ai) | 84% 使用率，46% 不信任准确性 |
+| State of Code 2025 | Sonar | [shiftmag.dev](https://shiftmag.dev/state-of-code-2025-7978/) | 42% 代码提交包含 AI 辅助 |
+| AI-Generated Code Statistics 2026 | EliteBrains | [elitebrains.com](https://www.elitebrains.com/blog/aI-generated-code-statistics-2025) | 41% 代码 AI 生成 |
+| AI Developer Productivity Research | GitClear | [gitclear.com](https://www.gitclear.com/recent_ai_developer_productivity_code_quality_research) | 2.11 亿行代码分析 |
+
+#### 效率研究
+
+| 研究 | 机构 | 链接 | 关键发现 |
+|------|------|------|---------|
+| Copilot 对开发者绩效影响 | BlueOptima | [blueoptima.com](https://www.blueoptima.com/resource/the-impact-of-github-copilot-on-developer-performance) | 平均提升 5.4%，活跃用户 20% |
+| 开发者 AI 影响 RCT 研究 | arXiv | [arxiv.org](https://arxiv.org/abs/2507.09089) | 有经验开发者实际慢 19% |
+| AI 编码效率研究 | arXiv | [arxiv.org](https://arxiv.org/abs/2509.20353) | 真实场景下的 Copilot 影响 |
+
+#### 行业分析
+
+| 报告 | 机构 | 链接 | 关键发现 |
+|------|------|------|---------|
+| State of AI Global Survey 2025 | McKinsey | [mckinsey.com](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) | AI 价值实现趋势 |
+| AI Value Generation Gap | BCG | [bcg.com](https://www.bcg.com/publications/2025/are-you-generating-value-from-ai-the-widening-gap) | AI Agent 占 17% 价值 |
+| AI ROI 2025 | Google Cloud | [cloud.google.com](https://cloud.google.com/resources/content/roi-of-ai-2025) | 早期采用者实践 |
+| JetBrains 开发者生态 2025 | JetBrains | [blog.jetbrains.com](https://blog.jetbrains.com/research/2025/10/state-of-developer-ecosystem-2025/) | 85% 开发者使用 AI 工具 |
+
+#### 质量与风险
+
+| 研究 | 机构 | 链接 | 关键发现 |
+|------|------|------|---------|
+| AI 与代码质量权衡 | DevOps.com | [devops.com](https://devops.com/ai-in-software-development-productivity-at-the-cost-of-code-quality-2/) | 速度与质量需权衡 |
+| AI 编程的兴起 | MIT Technology Review | [technologyreview.com](https://www.technologyreview.com/2025/12/15/1128352/rise-of-ai-coding-developers-2026/) | 就业市场影响 |
+| AI 辅助开发的问题 | dev.to | [dev.to](https://dev.to/jasen_dev/ai-assisted-development-in-2025-the-problem-is-no-longer-the-code-452e) | 问题从代码转向编排 |
+
+#### 官方数据
+
+| 数据 | 来源 | 链接 |
+|------|------|------|
+| Google Q1 2025 AI 代码占比 30% | Alphabet Earnings Call | [medium.com](https://medium.com/design-bootcamp/google-ceo-sundar-pichai-ai-writes-over-30-of-our-code-111eb360f272) |
+| GitHub Copilot 官方学习路径 | GitHub | [learn.github.com](https://learn.github.com/learning-pathways/github-copilot) |
+| GitHub Copilot 统计数据 2026 | Panto AI | [getpanto.ai](https://www.getpanto.ai/blog/github-copilot-statistics) |
 
 ### 附录 B：内部文档
 
